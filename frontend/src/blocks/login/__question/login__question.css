@@ -1,0 +1,18 @@
+.login__question {
+  min-width: 358px;
+  height: 17px;
+  color: white;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  margin: 15px auto 0;
+}
+
+@media (max-width: 425px) {
+  .login__question {
+    margin: 15px 30px 0;
+  }
+}

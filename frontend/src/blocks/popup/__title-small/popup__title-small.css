@@ -1,0 +1,5 @@
+.popup__title-small {
+  display: flex;
+  text-align: left;
+  margin: 0;
+}

@@ -1,0 +1,5 @@
+.fullscreen__image {
+  max-height: 75vh;
+  max-width: 75vw;
+  object-fit: cover;
+}

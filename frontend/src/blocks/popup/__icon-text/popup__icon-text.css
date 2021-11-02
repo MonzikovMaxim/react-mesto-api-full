@@ -1,0 +1,19 @@
+.popup__icon-text {
+  margin: 0 0 23px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+
+  color: #000000;
+}
+
+@media (max-width: 425px) {
+  .popup__icon-text {
+    font-size: 20px;
+    line-height: 24px;
+    
+  }
+}

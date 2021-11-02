@@ -1,0 +1,20 @@
+.header__link {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  outline: none;
+  min-width: 56px;
+  height: 22px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
+  cursor: pointer;
+  color: #A9A9A9;
+  border: none;
+  padding: 0;
+  transition: opacity 0.2s ease-in-out;
+  text-decoration: none;
+}
+

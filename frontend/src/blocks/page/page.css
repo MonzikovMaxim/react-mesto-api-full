@@ -1,0 +1,14 @@
+.page {
+  max-width: 1280px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background: #000000;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  
+}

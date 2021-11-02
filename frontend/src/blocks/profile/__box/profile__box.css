@@ -1,0 +1,17 @@
+.profile__box {
+  position: relative;
+  max-width: 880px;
+  border-color: white;
+}
+
+@media (max-width: 950px) {
+  .profile__box {
+    align-items: center;
+  }
+}
+
+@media (max-width: 470px) {
+  .profile__box {
+    flex-direction: column;
+  }
+}

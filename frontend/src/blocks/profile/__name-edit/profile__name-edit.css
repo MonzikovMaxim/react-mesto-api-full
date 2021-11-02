@@ -1,0 +1,5 @@
+.profile__name-edit {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+}

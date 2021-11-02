@@ -1,0 +1,14 @@
+.login__link-little {
+  height: 17px;
+  min-width: 16px;
+  display: inline;
+  background-color: transparent;
+  color: white;
+  text-decoration: none;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+}

@@ -1,0 +1,11 @@
+
+  .header__burger { 
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 18px;
+    background-color: transparent;
+    background-color: none;
+    border: none;
+    color: none;
+  }
