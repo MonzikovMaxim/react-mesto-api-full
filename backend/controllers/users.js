@@ -37,14 +37,10 @@ const getUser = (req, res, next) => {
     .catch(next);
 };
 
-// eslint-disable-next-line consistent-return
 const createUser = (req, res, next) => {
   const {
     name, about, avatar, email, password,
   } = req.body;
-  if (!email || !password) {
-    throw new BadRequest('Невалидные данные');
-  }
   User.findOne({ email })
     .then((user) => {
       if (user) {
@@ -52,20 +48,26 @@ const createUser = (req, res, next) => {
       }
       return bcrypt.hash(password, 10);
     })
-    .then((hash) => {
-      User.create({
-        name, about, avatar, email, password: hash,
-      // eslint-disable-next-line object-curly-newline
-      }).then((user) => res.status(200).send({ user: { name, about, avatar, email } }));
+    .then((hash) => User.create({
+      name, about, avatar, email, password: hash,
     })
-    .catch((error) => {
-      if (error.name === 'ValidationError') {
-        throw new BadRequest('Переданы некорректные данные при создании пользователя');
-      } else {
-        next(error);
-      }
-    })
-    .catch(next);
+      .then((user) => {
+        const {
+          // eslint-disable-next-line no-shadow
+          name, email, about, avatar,
+        } = user;
+        res.send({
+          name, email, about, avatar,
+        });
+      })
+      .catch((error) => {
+        if (error.name === 'ValidationError') {
+          throw new BadRequest('Переданы некорректные данные при создании пользователя');
+        } else {
+          next(error);
+        }
+      })
+      .catch(next));
 };
 
 const login = (req, res, next) => {
@@ -81,11 +83,7 @@ const login = (req, res, next) => {
       return res.send({ token });
     })
     .catch((error) => {
-      if (error.name === 'MongoServerError' && error.code === 11000) {
-        throw new UnauthorizedError('Некорректный токен');
-      } else {
-        next(error);
-      }
+      throw new UnauthorizedError(error.message);
     })
     .catch(next);
 };
